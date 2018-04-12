@@ -1,7 +1,7 @@
 Android混合开发
 ---
 
-###前期核心
+### 前期核心
  ```
     WebView载入html
 
@@ -14,7 +14,7 @@ Android混合开发
      mWebView.setWebChromeClient(new WebChromeClient() {
      });  //不设置alert无法弹出
 
-###Android控件调js
+### Android控件调js
 ```
      1.
       //调用javascript的androidCallJs
@@ -34,7 +34,7 @@ Android混合开发
      html写好function androidCallJs(text){...}
 
 
-###js调安Android后台服务
+### js调Android后台服务
 ```
      1.
      //设置html的window.android变量
