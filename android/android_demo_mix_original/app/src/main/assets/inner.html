@@ -5,7 +5,7 @@
     <title></title>
     <script>
             //Android调用JS，不带返回值
-            function androidcallJs(arg){
+            function androidCallJs(arg){
                 document.getElementById("content").innerHTML = arg;
                 alert(arg);
             }
@@ -16,7 +16,7 @@
 
             }
 
-            function getSum2(num1,num2){
+            function doSum(num1,num2){
                     return num1+num2;
             }
 
@@ -34,9 +34,9 @@
 
 </head>
 <body class="mybody">
-<div class="mydiv" id="content">WebView内容显示</div>
+<div class="mydiv" id="content">content显示</div>
 
-<input class="input" value="创建dialog" type="button"
-       onclick="window.android.startFunction('i am come from JS')"/>
+<input class="input" value="js调Android-dialog" type="button"
+       onclick="window.android.alertDialog('I am come from JS')"/>
 </body>
 </html>

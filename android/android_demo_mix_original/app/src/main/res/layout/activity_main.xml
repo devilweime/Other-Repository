@@ -10,14 +10,14 @@
         android:id="@+id/button_null"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="调用JS函数不带返回值" />
+        android:text="Android控件调js" />
 
     <Button
         android:id="@+id/button_var"
         android:layout_alignParentRight="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="代用JS带返回值" />
+        android:text="Android控件调Toast" />
     <WebView
         android:id="@+id/webview"
         android:layout_below="@+id/button_var"
