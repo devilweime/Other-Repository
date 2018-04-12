@@ -13,6 +13,7 @@ Android混合开发
 
      mWebView.setWebChromeClient(new WebChromeClient() {
      });  //不设置alert无法弹出
+```
 
 ### Android控件调js
 ```
@@ -32,8 +33,7 @@ Android混合开发
 
      2.
      html写好function androidCallJs(text){...}
-
-
+```
 ### js调Android后台服务
 ```
     1.
@@ -54,3 +54,4 @@ Android混合开发
 
      3.
      html调用window.android.alertDialog("I am come from JS")
+```
