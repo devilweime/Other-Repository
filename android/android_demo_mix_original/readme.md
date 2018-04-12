@@ -36,7 +36,7 @@ Android混合开发
 
 ### js调Android后台服务
 ```
-     1.
+    1.
      //设置html的window.android变量
      mWebView.addJavascriptInterface(MainActivity.this, "android");
 
