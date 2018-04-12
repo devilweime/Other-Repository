@@ -1,0 +1,19 @@
+#忽略规则
+
+#Intellij project files
+/**/.idea
+/**/.iml
+
+#eclipse
+/**/*.settings
+
+#svn
+/**/*.svn
+
+#maven
+/**/target
+/**/*.classpath
+/**/*.project
+
+#保留空文件夹
+#find . -type d -empty -exec touch {}/.gitkeep \;

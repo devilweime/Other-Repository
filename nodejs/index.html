@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="bundle03.js"></script>
+</head>
+<body>
+<h3>nodeJs的使用</h3>
+<br>
+1.安装nodeJs
+<br>
+2.编写好hello.js,位于nodeJs安装目录下
+<br>
+3.CMD命令运行，首先进入node.exe目录，"node hello.js"运行
+<br>
+<h3>浏览器运行node模块</h3>
+<br>
+<p style="color: red">由于 NodeJS 和浏览器环境的差别，某些 NodeJS 模块在浏览器中并不能直接使用。比如在浏览器中无法访问文件系统，也无法获取操作系统相关的信息。因此在使用 Browserify
+    之后可能会出现某些模块无法使用的情况。
+    <br>
+    <a href="https://www.ibm.com/developerworks/cn/web/1501_chengfu_browserify/">详细了解</a>
+</p>
+1.安装browserify，同上CMD操作
+<br>
+2.命令：browserify -r ./hello.js > bundle03.js -r能够获得定义好的require
+<br>
+3.调用
+<br>
+var hello = require("/hello.js");
+<br>
+hello("hello,world");
+
+</body>
+
+<script>
+
+    /*var printPdf = require("/printPDF.js");
+    printPdf("C:\\Users\\wgw\\Desktop\\KHYD7.pdf"  ,'')*/
+
+    var hello = require("/hello.js");
+    hello("hello,world");
+
+</script>
+</html>
