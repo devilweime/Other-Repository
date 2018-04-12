@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+            //Android调用JS，不带返回值
+            function androidcallJs(arg){
+                document.getElementById("content").innerHTML = arg;
+                alert(arg);
+            }
+            //Android调用JS，带返回值
+            function getSummation(num1,num2){
+
+                window.android.onSumResult(num1+num2);
+
+            }
+
+            function getSum2(num1,num2){
+                    return num1+num2;
+            }
+
+    </script>
+
+    <style>
+        .input{background: coral;border: chartreuse;position: relative;top: 100px;width: 50%;
+        height: 100px;margin:0 auto;border: aqua;border-style: solid;border-width: 1px;
+
+        border-radius: calc(10px);
+        }
+        .mydiv{background: cornflowerblue;width: 100% auto; height: 200px;text-align: center;line-height: 200px;margin: 0 auto;}
+        .mybody{background: chartreuse;}
+    </style>
+
+</head>
+<body class="mybody">
+<div class="mydiv" id="content">WebView内容显示</div>
+
+<input class="input" value="创建dialog" type="button"
+       onclick="window.android.startFunction('i am come from JS')"/>
+</body>
+</html>
