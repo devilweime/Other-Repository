@@ -1,8 +1,7 @@
-##混合开发
+##Android混合开发
 
-    ###前期核心
-
-    ```
+###前期核心
+ ```
     WebView载入html
 
     //asset文件夹需带android前缀
@@ -14,8 +13,8 @@
      mWebView.setWebChromeClient(new WebChromeClient() {
      });  //不设置alert无法弹出
 
-     ###Android控件调js
-     ```
+ ###Android控件调js
+```
      1.
       //调用javascript的androidCallJs
       mWebView.loadUrl("javascript:androidCallJs('我来自Android')");
@@ -34,8 +33,8 @@
      html写好function androidCallJs(text){...}
 
 
-     ###js调安Android后台服务
-     ```
+###js调安Android后台服务
+```
      1.
      //设置html的window.android变量
      mWebView.addJavascriptInterface(MainActivity.this, "android");
