@@ -48,7 +48,7 @@ public class MainActivity extends Activity {
         mWebView.setWebChromeClient(new WebChromeClient() {
         });  //不设置alert无法弹出
 
-        //设置html的window.android变量
+        //设置html的window.android变量,扫描MainActivity类所有添加@JavascriptInterface
         mWebView.addJavascriptInterface(MainActivity.this, "android");
     }
 
