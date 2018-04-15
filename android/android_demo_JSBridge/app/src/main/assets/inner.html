@@ -3,10 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <title>jsbridge</title>
+
+    <style>
+         button{
+            display:block;
+            margin:0 auto;
+            height:30px;
+            margin-top: 10px;
+        }
+        input{
+            display:block;
+            margin:0 auto;
+            height:20px;
+            margin-top: 10px;
+        }
+
+         #show{
+            margin: 10px auto;
+            width: 300px;
+            height: 200px;
+            background: #eee;
+            line-height: 200px;
+            border-radius:4px;
+            border: solid 1px;
+
+        }
+
+    </style>
+
+
+    <script>
+
+        function callAndroid(){
+
+            var data = getData();
+
+            //call native method
+            window.WebViewJavascriptBridge.callHandler(
+                'callAndroid'
+                , {'param': data}
+                , function(responseData) {
+                    document.getElementById("show").innerHTML = responseData;
+                }
+            );
+        }
+
+
+        function callAndroidDefault(){
+            var data = getData();
+            window.WebViewJavascriptBridge.send(
+                data
+                , function(responseData) {
+                    document.getElementById("show").innerHTML = "data = " + responseData
+                }
+            );
+        }
+
+        function getData(){
+           return document.getElementById("input_data").value;
+        }
+
+      /**(function(){
+            if (window.WebViewJavascriptBridge) {
+                callback(WebViewJavascriptBridge)
+            } else {
+                document.addEventListener(
+                    'WebViewJavascriptBridgeReady'
+                    , function() {
+                        callback(WebViewJavascriptBridge)
+                    },
+                    false
+                );
+            }
+        })();
+
+
+        function callback(bridge){
+
+            //registerHandler，被android调用
+            bridge.registerHandler("callJs", function(data, responseCallback) {
+                document.getElementById("show").innerHTML = ("Android call Js:" + data);
+                alert(data)
+                var responseData = "Javascript 数据";
+                responseCallback(responseData);
+            });
+        }**/
+
+
+
+        function connectWebViewJavascriptBridge(callback) {
+            if (window.WebViewJavascriptBridge) {
+                callback(WebViewJavascriptBridge)
+            } else {
+                document.addEventListener(
+                    'WebViewJavascriptBridgeReady'
+                    , function() {
+                        callback(WebViewJavascriptBridge)
+                    },
+                    false
+                );
+            }
+        }
+
+        connectWebViewJavascriptBridge(function(bridge) {
+            bridge.init(function(message, responseCallback) {
+                console.log('JS got a message', message);
+                var data = {
+                    'Javascript Responds': '测试中文!'
+                };
+
+                if (responseCallback) {
+                    console.log('JS responding with', data);
+                    responseCallback(data);
+                }
+            });
+
+            bridge.registerHandler("callJs", function(data, responseCallback) {
+                document.getElementById("show").innerHTML = ( data);
+                if (responseCallback) {
+                    var responseData = getData();;
+                    responseCallback(responseData);
+                }
+            });
+        })
+
+
+
+    </script>
+
 </head>
 <body>
+<input id="input_data" type="text">
+<button id="btn_callAndroidDefault" onclick="callAndroidDefault()">调用JSBridge默认</button>
+<button id="btn_callAndroid" onclick="callAndroid()">调用JSBridge根据handlerName</button>
+<div id="show">
 
-<button>调用JSBridge默认</button>
-<button>调用JSBridge根据handlerName</button>
+
+</div>
+
 </body>
 </html>
