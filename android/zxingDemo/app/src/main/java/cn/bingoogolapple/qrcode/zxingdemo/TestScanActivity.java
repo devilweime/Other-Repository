@@ -157,5 +157,4 @@ public class TestScanActivity extends AppCompatActivity implements QRCodeView.De
         }
     }
 
-
 }

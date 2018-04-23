@@ -12,6 +12,16 @@ import java.util.List;
 import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.EasyPermissions;
 
+//https://github.com/zxing/zxing
+//https://github.com/bingoogolapple/BGAQRCode-Android.git
+//https://github.com/yuzhiqiang1993/zxing/tree/master/app/src/main
+//https://blog.csdn.net/u012721519/article/details/51737058
+//https://blog.csdn.net/u010618194/article/details/77891313
+//https://github.com/journeyapps/zxing-android-embedded
+//https://www.cnblogs.com/mythou/p/3280023.html
+//https://segmentfault.com/a/1190000003945592
+//https://www.jianshu.com/p/f862b73d07f7
+
 public class MainActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
     private static final int REQUEST_CODE_QRCODE_PERMISSIONS = 1;
 
