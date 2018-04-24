@@ -1,0 +1,17 @@
+package com.wgw.test;
+
+import java.io.InputStream;
+
+public class Base64Test {
+
+	
+	
+	private static String decodeWithBase64(InputStream inputStream){
+		
+		
+		
+		return null;
+	} 
+	
+	
+}

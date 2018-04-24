@@ -35,6 +35,7 @@ public class MainActivity extends Activity {
 
     private Result parseQRcodeBitmap(String bitmapPath){
 
+        return null;
     }
 
 }

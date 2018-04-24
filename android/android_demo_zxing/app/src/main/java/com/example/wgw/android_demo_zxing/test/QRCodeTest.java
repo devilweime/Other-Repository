@@ -5,6 +5,9 @@ package com.example.wgw.android_demo_zxing.test;
 //https://blog.csdn.net/bear_huangzhen/article/details/46053327
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class QRCodeTest {
 
     public static void main(String[] args) {
@@ -14,7 +17,13 @@ public class QRCodeTest {
 
     }
 
-    private
+    private void decodeQR(){
+
+        ImageIO.
+
+
+
+    }
 
 
 }
