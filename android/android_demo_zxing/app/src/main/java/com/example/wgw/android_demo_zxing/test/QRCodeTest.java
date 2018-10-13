@@ -31,6 +31,13 @@ public class QRCodeTest {
 
     }
 
+    @Test
+    public void testDecodeQR() throws FormatException, ChecksumException, NotFoundException, IOException {
+        Result result = decodeQR("android_assets/hello_world_QR.png");
+        System.out.println(result.getText());
+    }
+
+
     public static Result decodeQR(String path) throws IOException, FormatException, ChecksumException, NotFoundException {
         Bitmap bitmap = readImage2Bitmap(path);
         int[] pixels = new int[bitmap.getWidth()*bitmap.getHeight()];
